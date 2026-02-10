@@ -10,7 +10,7 @@ app.get("/health", (req, res) => {
 });
 
 app.get("/api/v1/hello", (req, res) => {
-	res.json({ message: "Hello from Elastic Beanstalk!" });
+	res.json({ message: "Hello from Elastic Sanidhya Beanstalk!" });
 });
 
 app.post("/api/v1/echo", (req, res) => {
@@ -20,5 +20,6 @@ app.post("/api/v1/echo", (req, res) => {
 app.listen(port, "0.0.0.0", () => {
 	console.log(`API running on port ${port}`);
 });
+
 
 
