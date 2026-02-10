@@ -1,24 +1,18 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      java: corretto17
-    commands:
-      - echo Installing dependencies
-
-  pre_build:
-    commands:
-      - echo Pre-build phase
-      - cd SimpleApplication
-      - mvn clean
-
-  build:
-    commands:
-      - echo Build started
-      - mvn package -DskipTests
+  install:
+    runtime-versions:
+      java: corretto17
+  build:
+    commands:
+      - cd SimpleApplication
+      - mvn -DskipTests clean package
+      - cp target/*.jar application.jar
+      - zip -r deploy.zip application.jar Procfile
 
 artifacts:
-  files:
-    - SimpleApplication/target/*.jar
-  discard-paths: yes
+  base-directory: SimpleApplication
+  files:
+    - deploy.zip
+
