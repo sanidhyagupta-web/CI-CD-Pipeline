@@ -8,11 +8,9 @@ phases:
     commands:
       - cd SimpleApplication
       - mvn -DskipTests clean package
-      - mkdir -p deploy
-      - cp target/*.jar deploy/app.jar
-      - cp Procfile deploy/Procfile
-      - cd deploy
-      - zip -r ../deploy.zip .
+      - cp target/*.jar application.jar
+      - zip -r deploy.zip application.jar Procfile
+
 artifacts:
   files:
     - SimpleApplication/deploy.zip
