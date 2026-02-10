@@ -10,7 +10,7 @@ phases:
   pre_build:
     commands:
       - echo Pre-build phase
-      - cd demo
+      - cd SimpleApplication
       - mvn clean
 
   build:
