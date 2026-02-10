@@ -6,8 +6,11 @@ phases:
       java: corretto17
   build:
     commands:
-      - mvn clean package -DskipTests
+      - cd SimpleApplication
+      - chmod +x mvnw
+      - ./mvnw clean package -DskipTests
+
 artifacts:
   files:
-    - target/*.jar
-    - Procfile
+    - SimpleApplication/target/*.jar
+    - SimpleApplication/Procfile
