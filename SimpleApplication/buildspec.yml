@@ -20,5 +20,5 @@ phases:
 
 artifacts:
   files:
-    - demo/target/*.jar
+    - SimpleApplication/target/*.jar
   discard-paths: yes
