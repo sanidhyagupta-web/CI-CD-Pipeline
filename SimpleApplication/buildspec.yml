@@ -4,13 +4,16 @@ phases:
   install:
     runtime-versions:
       java: corretto17
+
   build:
     commands:
       - cd SimpleApplication
-      - mvn -v
       - mvn clean package -DskipTests
+      - cp target/*.jar app.jar
 
 artifacts:
+  base-directory: SimpleApplication
   files:
-    - SimpleApplication/target/*.jar
-    - SimpleApplication/Procfile
+    - app.jar
+    - Procfile
+  discard-paths: yes
