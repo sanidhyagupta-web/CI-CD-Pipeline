@@ -7,8 +7,8 @@ phases:
   build:
     commands:
       - cd SimpleApplication
-      - chmod +x mvnw
-      - ./mvnw clean package -DskipTests
+      - mvn -v
+      - mvn clean package -DskipTests
 
 artifacts:
   files:
