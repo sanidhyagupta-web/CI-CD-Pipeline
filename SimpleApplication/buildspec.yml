@@ -4,15 +4,18 @@ phases:
   install:
     runtime-versions:
       java: corretto17
+    commands:
+      - echo "Installing dependencies (if any)"
+      - mvn -v
   build:
     commands:
-      - cd SimpleApplication
-      - mvn -DskipTests clean package
-      - cp target/*.jar application.jar
-      - zip -r deploy.zip application.jar Procfile
+      - echo "Building Spring Boot JAR"
+      - mvn clean package -DskipTests
+      - echo "Renaming jar to app.jar"
+      - cp target/*.jar app.jar
+      - ls -la
 
 artifacts:
-  base-directory: SimpleApplication
   files:
-    - deploy.zip
-
+    - app.jar
+    - Procfile
