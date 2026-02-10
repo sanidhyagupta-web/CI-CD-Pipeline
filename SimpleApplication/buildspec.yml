@@ -12,5 +12,6 @@ phases:
       - zip -r deploy.zip application.jar Procfile
 
 artifacts:
+  base-directory: SimpleApplication
   files:
-    - SimpleApplication/deploy.zip
+    - deploy.zip
